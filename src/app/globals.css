@@ -1,26 +1,75 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-ivory: #F5F0EA;
+  --color-ivory-dark: #E8E1D8;
+  --color-gold: #C9A96E;
+  --color-gold-light: #DFC28D;
+  --color-gold-dark: #A8864F;
+  --color-charcoal: #1A1A1A;
+  --color-charcoal-mid: #3D3D3D;
+  --color-body: #2E2A26;
+  --color-muted: #6B6560;
+  --color-rose: #D4A4A4;
+  --color-surface: #FFFFFF;
+
+  --font-display: var(--font-cormorant);
+  --font-sans: var(--font-montserrat);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+:root {
+  --background: #F5F0EA;
+  --foreground: #1A1A1A;
 }
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
 
 body {
   background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  color: #2E2A26;
+  font-family: var(--font-montserrat), "Montserrat", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
+
+h1, h2, h3, h4 {
+  font-family: var(--font-cormorant), "Cormorant Garamond", serif;
+  color: #1A1A1A;
+}
+
+p { color: #2E2A26; }
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #F5F0EA; }
+::-webkit-scrollbar-thumb { background: #C9A96E; border-radius: 3px; }
+
+/* Selection */
+::selection { background: #C9A96E33; color: #1A1A1A; }
+
+/* Transitions */
+.transition-luxury {
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Image zoom on hover */
+.img-zoom img {
+  transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.img-zoom:hover img { transform: scale(1.05); }
+
+/* Gold underline animation */
+.gold-underline { position: relative; display: inline-block; }
+.gold-underline::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: #C9A96E;
+  transition: width 0.3s ease;
+}
+.gold-underline:hover::after { width: 100%; }
