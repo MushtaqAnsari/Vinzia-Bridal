@@ -49,7 +49,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={`${cormorant.variable} ${montserrat.variable}`}>
+    <html lang="en" className={`${cormorant.variable} ${montserrat.variable}`} style={{ colorScheme: "light" }}>
       <body className="min-h-screen bg-[#F8F4EF] text-[#1A1A1A]">
         {children}
       </body>

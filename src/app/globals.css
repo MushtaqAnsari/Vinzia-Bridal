@@ -24,10 +24,14 @@
 
 * { box-sizing: border-box; }
 
-html { scroll-behavior: smooth; }
+html {
+  scroll-behavior: smooth;
+  color-scheme: light;
+  background: #F5F0EA;
+}
 
 body {
-  background: var(--background);
+  background: #F5F0EA;
   color: #2E2A26;
   font-family: var(--font-montserrat), "Montserrat", sans-serif;
   -webkit-font-smoothing: antialiased;
