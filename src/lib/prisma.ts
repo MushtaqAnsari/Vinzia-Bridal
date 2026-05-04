@@ -4,7 +4,9 @@ import { PrismaClient } from "@/generated/prisma/client"
 function createPrismaClient() {
   const connectionString = process.env.DATABASE_URL
   if (!connectionString) {
-    throw new Error("DATABASE_URL environment variable is not set")
+    // Return a non-functional client during build / when DB not configured.
+    // All callers already wrap in try/catch so this surfaces as empty state.
+    return new PrismaClient()
   }
   const adapter = new PrismaPg({ connectionString })
   return new PrismaClient({ adapter })
