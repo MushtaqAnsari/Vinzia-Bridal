@@ -38,12 +38,14 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-h1, h2, h3, h4 {
-  font-family: var(--font-cormorant), "Cormorant Garamond", serif;
-  color: #1A1A1A;
-}
+@layer base {
+  h1, h2, h3, h4 {
+    font-family: var(--font-cormorant), "Cormorant Garamond", serif;
+    color: #1A1A1A;
+  }
 
-p { color: #2E2A26; }
+  p { color: #2E2A26; }
+}
 
 /* Scrollbar */
 ::-webkit-scrollbar { width: 6px; }
